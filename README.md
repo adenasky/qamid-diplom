@@ -16,11 +16,11 @@
 1. Открыть терминал в корневой папке проекта.
 2. Выполнить команду:
    ```sh
-   ./gradlew connectedAndroidTest
+   adb shell am instrument -w -m -e debug false ru.iteco.fmhandroid.test/androidx.test.runner.AndroidJUnitRunner
    ```
 3. Дождаться завершения тестов.
 
 ## Формирование Allure-отчета
 После завершения тестов выполнить команду:
    ```sh
-   allure serve allure-results
+   allure generate allure-results --clean -o allure-report
